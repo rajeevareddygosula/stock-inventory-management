@@ -31,10 +31,10 @@ public class StockCommandController {
 		return new ResponseEntity<>(stockCommandService.createStock(stockCreateDTO), HttpStatus.CREATED);
 	}
 
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/{number}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<StockQueryDTO> updateStock(@PathVariable(value = "id") UUID id,
+	public ResponseEntity<StockQueryDTO> updateStock(@PathVariable(value = "number") UUID number,
 			@RequestBody StockUpdateDTO stockUpdateDTO) {
-		return new ResponseEntity<>(stockCommandService.updateStock(id, stockUpdateDTO), HttpStatus.OK);
+		return new ResponseEntity<>(stockCommandService.updateStock(number, stockUpdateDTO), HttpStatus.OK);
 	}
 }
